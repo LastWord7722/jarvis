@@ -7,4 +7,4 @@ for (const file of commandFiles) {
     const commands = require(path.join(__dirname, 'commands', file));
 }
 
-console.log('hello world');
+console.log('hello world111');
