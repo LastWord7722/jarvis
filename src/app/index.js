@@ -8,3 +8,4 @@ for (const file of commandFiles) {
 }
 
 console.log('denis hello this is git');
+console.log('Занимаемся хуетой(учим гит)');
