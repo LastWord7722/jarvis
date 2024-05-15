@@ -1,9 +1,10 @@
 {
-  "name": "src",
+  "name": "jarvis",
   "version": "1.0.0",
   "description": "this is discord bot",
   "main": "index.js",
   "scripts": {
+    "start": "node app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
