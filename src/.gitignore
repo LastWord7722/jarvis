@@ -5,3 +5,4 @@ temp/*
 !.env.example
 node_modules/
 .idea/
+../.idea/
