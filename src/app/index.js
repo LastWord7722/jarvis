@@ -7,3 +7,4 @@ for (const file of commandFiles) {
     const commands = require(path.join(__dirname, 'commands', file));
 }
 console.log('denis hello this is git');
+console.log("update git to version 1.06.a");
