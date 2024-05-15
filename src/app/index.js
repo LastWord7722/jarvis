@@ -6,8 +6,4 @@ const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(fil
 for (const file of commandFiles) {
     const commands = require(path.join(__dirname, 'commands', file));
 }
-
 console.log('denis hello this is git');
-console.log('!!!!Занимаемся хуетой(учим гит)!!!!');
-
-console.log(True-1);
