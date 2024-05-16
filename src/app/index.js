@@ -17,7 +17,7 @@ client.config = config
 commandsHelper.loadCommands();
 
 client.on('ready', () => {
-    console.log(`Server start`);
+    console.log(`Bot Jarvis start`);
 });
 
 client.on('messageCreate', (message) => {
