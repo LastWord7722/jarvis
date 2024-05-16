@@ -1,6 +1,5 @@
 require('dotenv').config();
 const Discord = require('discord.js');
-// Using Intents class
 const client = new Discord.Client({
     intents: [
         Discord.GatewayIntentBits.Guilds,
@@ -8,21 +7,17 @@ const client = new Discord.Client({
         Discord.GatewayIntentBits.MessageContent
     ]
 });
-const fs = require('fs');
-const path = require('path');
-const prefix = process.env.PREFIX;
+const config = require('./configs/config.json');
+const prefix = config.prefix;
+const commandsHelper = require('./helpers/commandsHelpers');
+client.config = config
 
-client.commands = new Discord.Collection();
 
 // Load commands
-const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
-    const command = require(path.join(__dirname, 'commands', file));
-    client.commands.set(command.name, command);
-}
+commandsHelper.loadCommands();
 
 client.on('ready', () => {
-    console.log(`Я живу`);
+    console.log(`Server start`);
 });
 
 client.on('messageCreate', (message) => {
@@ -31,7 +26,7 @@ client.on('messageCreate', (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
-    const command = client.commands.get(commandName);
+    const command = commandsHelper.getCommand(commandName);
 
     if (!command) return;
 
