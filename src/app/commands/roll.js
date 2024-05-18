@@ -1,6 +1,7 @@
 module.exports = {
     name: 'roll',
     description: 'command for roll',
+    example: '',
     execute(message, args) {
         const max = args[0] && args[0] > 0 ? args[0] : 100;
 

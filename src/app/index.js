@@ -1,5 +1,9 @@
 require('dotenv').config();
 const Discord = require('discord.js');
+const config = require('../config/common.json');
+const prefix = config.prefix;
+const commandsHelper = require('./helpers/commandsHelpers');
+
 const client = new Discord.Client({
     intents: [
         Discord.GatewayIntentBits.Guilds,
@@ -7,11 +11,7 @@ const client = new Discord.Client({
         Discord.GatewayIntentBits.MessageContent
     ]
 });
-const config = require('../config/common.json');
-const prefix = config.prefix;
-const commandsHelper = require('./helpers/commandsHelpers');
 client.config = config
-
 
 // Load commands
 commandsHelper.loadCommands();
