@@ -1,6 +1,6 @@
 const commandsHelper = require("../helpers/commandsHelpers");
 const Discord = require('discord.js');
-const prefix = require("../configs/config.json").prefix;
+const prefix = require("../../config/common.json").prefix;
 
 commandsHelper.loadCommands();
 

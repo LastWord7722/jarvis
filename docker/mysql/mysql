@@ -1,0 +1,8 @@
+FROM mysql:latest
+
+ENV MYSQL_ROOT_PASSWORD=my-secret-pw
+ENV MYSQL_DATABASE=discordbot
+ENV MYSQL_USER=botuser
+ENV MYSQL_PASSWORD=botpassword
+
+

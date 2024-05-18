@@ -1,5 +1,6 @@
 {
   "prefix" : "!",
+  "defaultConnectName" : "mysql",
   "server": {
     "id": "122191477812625410133"
   }

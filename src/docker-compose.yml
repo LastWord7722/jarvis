@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysql:
+    build:
+      context: ../docker/mysql
+      dockerfile: mysql
+    container_name: discord-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: discordbot
+      MYSQL_USER: botuser
+      MYSQL_PASSWORD: botpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

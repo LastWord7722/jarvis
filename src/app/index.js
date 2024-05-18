@@ -7,7 +7,7 @@ const client = new Discord.Client({
         Discord.GatewayIntentBits.MessageContent
     ]
 });
-const config = require('./configs/config.json');
+const config = require('../config/common.json');
 const prefix = config.prefix;
 const commandsHelper = require('./helpers/commandsHelpers');
 client.config = config
