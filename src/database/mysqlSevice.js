@@ -38,6 +38,16 @@ module.exports = class Database
         });
        return this
     }
+    banUser(user_name, user_id, admin_name, admin_id, reason){
+
+        this.connection.query(`
+            INSERT INTO
+                bans (user_name, user_id, admin_name, admin_id, reason)
+            VALUES
+                (?, ?, ?, ?, ?);
+        `, [user_name, user_id, admin_name, admin_id, reason]);
+
+    }
     getConnection(){
         return this.connection
     }

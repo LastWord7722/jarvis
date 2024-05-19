@@ -5,11 +5,13 @@ exports.up = function(next) {
     database.connection.query(`
         CREATE TABLE bans (
             id         INT AUTO_INCREMENT PRIMARY KEY,
-            user_hash  VARCHAR(255) NOT NULL,
-            admin_hash VARCHAR(255) NOT NULL,
-            message    VARCHAR(255) NOT NULL,
-            start_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            end_date   TIMESTAMP
+            user_name  VARCHAR(255) NOT NULL,
+            user_id    VARCHAR(255) NOT NULL,
+            admin_name VARCHAR(255) NOT NULL,
+            admin_id   VARCHAR(255) NOT NULL,
+            reason    VARCHAR(255) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            is_unban   bool DEFAULT false
         )
     `, function(error, results, fields) {
         if (error) {
